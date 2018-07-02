@@ -1,0 +1,16 @@
+{
+  "name": "rainerharmse",
+  "version": "1.0.0",
+  "description": "My wordpress blog",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/style.scss css/style.css -w"
+  },
+  "author": "Rainer Harmse",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+  }
+}

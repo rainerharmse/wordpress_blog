@@ -1,0 +1,195 @@
+@import "_variables.scss";
+
+//please use dashes(-) for variable names
+
+//clearfix
+%clear-fix {
+	position: relative;
+	line-height: 0;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+	clear: both;
+
+	&::after {
+		position: absolute;
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+//box-sizing
+%box-sizing{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+//image urls
+@mixin background-content($file, $repeat, $position, $size) {
+	@if($file == null){
+		background-image: none;
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$file}', sizingMethod=scale);
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$file}', sizingMethod=scale)";
+		background-repeat: $repeat;
+		background-position: $position;
+		-webkit-background-size: $size;
+		-moz-background-size: $size;
+		-o-background-size: $size;
+		background-size: $size;
+	}@else{
+		background-image: url(#{$file});
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$file}', sizingMethod=scale);
+		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$file}', sizingMethod=scale)";
+		background-repeat: $repeat;
+		background-position: $position;
+		-webkit-background-size: $size;
+		-moz-background-size: $size;
+		-o-background-size: $size;
+		background-size: $size;
+	}
+}
+
+//font styles
+@mixin font-style($fsize, $color, $weight, $height, $align){
+	font-size: $fsize;
+	color: $color;
+	font-weight: $weight;
+	line-height: $height;
+	text-align: $align;
+}
+
+//after element
+@mixin after-elm ($y_top, $x_left, $x_right , $y_bottom, $w, $h){
+	content: '';
+	display: block;
+	width: $w;
+	height: $h;
+	top: $y_top;
+	left: $x_left;
+	right: $x_right;
+	bottom: $y_bottom;
+	position: absolute;
+}
+
+//before element
+@mixin before-elm ($y_top, $x_left, $x_right , $y_bottom, $w, $h){
+	content: '';
+	position: absolute;
+	display: block;
+	top: $y_top;
+	left: $x_left;
+	right: $x_right;
+	bottom: $y_bottom;
+	width: $w;
+	height: $h;
+}
+
+//to position the element in parent
+@mixin positioner($pos, $x, $y) {
+	position: $pos;
+	top: $y;
+	left: $x;
+}
+
+//element styles
+@mixin elm($width, $height, $display){
+	display: $display;
+	width: $width;
+	height: $height;
+}
+
+//position element by position
+@mixin translate($elmposX, $elmposY){
+	-webkit-transform: translate($elmposX, $elmposY);
+	   -moz-transform: translate($elmposX, $elmposY);
+		-ms-transform: translate($elmposX, $elmposY);
+		 -o-transform: translate($elmposX, $elmposY);
+			transform: translate($elmposX, $elmposY);
+}
+
+//transition elements
+@mixin transition($property, $timing){
+	-webkit-transition: $property $timing linear;
+	   -moz-transition: $property $timing linear;
+	    -ms-transition: $property $timing linear;
+		 -o-transition: $property $timing linear;
+			transition: $property $timing linear;
+}
+
+//to skew the element
+@mixin skew($skewXdeg, $skewYdeg) {
+	-webkit-transform: skew($skewXdeg, $skewYdeg);
+	   -moz-transform: skew($skewXdeg, $skewYdeg);
+		-ms-transform: skew($skewXdeg, $skewYdeg);
+		 -o-transform: skew($skewXdeg, $skewYdeg);
+			transform: skew($skewXdeg, $skewYdeg);
+}
+
+//to scale the element
+@mixin scale($scaleX,$scaleY) {
+	-webkit-transform: scale($scaleX, $scaleY);
+	   -moz-transform: scale($scaleX, $scaleY);
+		-ms-transform: scale($scaleX, $scaleY);
+		 -o-transform: scale($scaleX, $scaleY);
+			transform: scale($scaleX, $scaleY);
+}
+
+//border radius styles
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+		-ms-border-radius: $radius;
+		 -o-border-radius: $radius;
+			border-radius: $radius;
+}
+
+//to rotate the element
+@mixin rotate($z) {
+	-webkit-transform: rotate($z);
+	   -moz-transform: rotate($z);
+		-ms-transform: rotate($z);
+		 -o-transform: rotate($z);
+			transform: rotate($z);
+}
+
+//box-shadow
+@mixin box-shadow($value) {
+	-webkit-box-shadow: $value;
+	   -moz-box-shadow: $value;
+		-ms-box-shadow: $value;
+		 -o-box-shadow: $value;
+			box-shadow: $value;
+}
+
+//media queries
+//screen width 800px
+@mixin query-800($padding: 0 40px){
+	h1{ font-size: 32px; line-height: 34px; }
+	h2{ font-size: 27px; line-height: 30px; }
+	h3{ font-size: 25px; line-height: 27px; }
+	h4{ font-size: 22px; line-height: 25px; }
+	h5{ font-size: 16px; line-height: 18px; }
+	p,a{ font-size: 15px; line-height: 17px; }
+
+	.container{
+		padding: $padding;
+	}
+}
+
+//screen width 600px
+@mixin query-600($padding: 0 25px){
+	h1{ font-size: 28px; line-height: 30px; }
+	h2{ font-size: 25px; line-height: 27px; }
+	h3{ font-size: 22px; line-height: 25px; }
+	h4{ font-size: 18px; line-height: 20px; }
+	h5{ font-size: 16px; line-height: 18px; }
+	p,a{ font-size: 13px; line-height: 15px; }
+
+	.container{
+		padding: $padding;
+	}
+}

@@ -1,0 +1,45 @@
+
+//please use dashes(-) for variable names
+
+//Global variables
+$max-width: 1920;
+$directory: '../images/';
+
+//colors
+$brand-color-1: #73F9DA;
+$brand-color-2: #181818;
+$brand-color-3: #252627;
+$brand-color-4: #F9F9F9;
+$brand-color-5: #ffffff;
+$brand-color-6: #ffffff;
+$brand-color-7: #ffffff;
+$brand-color-8: #ffffff;
+$brand-color-9: #ffffff;
+$brand-color-10: #ffffff;
+
+//widths
+//how many columns can fit in
+$col-1: 100%;
+$col-2: 50%;
+$col-3: 33.3%;
+$col-4: 25%;
+$col-5: 20%;
+$col-6: 16.6%;
+$col-7: 14.2%;
+$col-8: 12.5%;
+$col-9: 11.1%;
+$col-10: 10%;
+
+//font family
+$brand-font-family-1: Arial;
+$brand-font-family-2: Verdana;
+$brand-font-family-3: Helvetica;
+$brand-font-family-4: sans-serif;
+$brand-font-family-all:  $brand-font-family-1 +","+ $brand-font-family-2 +","+ $brand-font-family-3;
+
+//borders
+$brand-border-1: 1px solid #000000;
+$brand-border-2: 1px solid #000000;
+$brand-border-3: 1px solid #000000;
+$brand-border-4: 1px solid #000000;
+$brand-border-5: 1px solid #000000;
